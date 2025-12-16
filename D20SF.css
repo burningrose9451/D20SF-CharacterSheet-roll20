@@ -1,0 +1,397 @@
+/* D20SF Character Sheet Styles for Roll20 */
+
+/* Main Container */
+.charsheet .sheet-character-sheet {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    color: #333;
+    background-color: #f5f5f5;
+    padding: 10px;
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+/* Tab Navigation */
+.charsheet .sheet-tab-navigation {
+    display: flex;
+    background-color: #2c3e50;
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+.charsheet .sheet-tab-navigation input[type="radio"] {
+    display: none;
+}
+
+.charsheet .sheet-tab-label {
+    flex: 1;
+    text-align: center;
+    padding: 12px 20px;
+    color: #ecf0f1;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    border-right: 1px solid #34495e;
+}
+
+.charsheet .sheet-tab-label:last-child {
+    border-right: none;
+}
+
+.charsheet .sheet-tab-label:hover {
+    background-color: #34495e;
+}
+
+.charsheet .sheet-tab1:checked ~ .sheet-tab-label:nth-child(2),
+.charsheet .sheet-tab2:checked ~ .sheet-tab-label:nth-child(4),
+.charsheet .sheet-tab3:checked ~ .sheet-tab-label:nth-child(6),
+.charsheet .sheet-tab4:checked ~ .sheet-tab-label:nth-child(8) {
+    background-color: #3498db;
+}
+
+/* Tab Content */
+.charsheet .sheet-tab-content {
+    display: none;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 0 0 5px 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.charsheet .sheet-tab1:checked ~ .sheet-tab-character,
+.charsheet .sheet-tab2:checked ~ .sheet-tab-abilities,
+.charsheet .sheet-tab3:checked ~ .sheet-tab-inventory,
+.charsheet .sheet-tab4:checked ~ .sheet-tab-notes {
+    display: block;
+}
+
+/* Sections */
+.charsheet .sheet-section {
+    margin-bottom: 25px;
+    padding: 15px;
+    background-color: #fafafa;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+}
+
+.charsheet .sheet-section h2 {
+    margin: 0 0 15px 0;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #3498db;
+    color: #2c3e50;
+    font-size: 18px;
+}
+
+/* Grid Layouts */
+.charsheet .sheet-2-columns,
+.charsheet .sheet-3-columns,
+.charsheet .sheet-4-columns {
+    display: grid;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.charsheet .sheet-2-columns {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.charsheet .sheet-3-columns {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.charsheet .sheet-4-columns {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.charsheet .sheet-column {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Form Elements */
+.charsheet label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #555;
+    font-size: 13px;
+}
+
+.charsheet input[type="text"],
+.charsheet input[type="number"],
+.charsheet textarea,
+.charsheet select {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 14px;
+    transition: border-color 0.3s;
+}
+
+.charsheet input[type="text"]:focus,
+.charsheet input[type="number"]:focus,
+.charsheet textarea:focus,
+.charsheet select:focus {
+    outline: none;
+    border-color: #3498db;
+}
+
+.charsheet textarea {
+    min-height: 80px;
+    resize: vertical;
+    font-family: inherit;
+}
+
+.charsheet input[type="checkbox"] {
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+/* Buttons */
+.charsheet button {
+    padding: 8px 16px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.charsheet button:hover {
+    background-color: #2980b9;
+}
+
+.charsheet button[type="roll"] {
+    background-color: #e74c3c;
+    padding: 6px 12px;
+    font-size: 12px;
+}
+
+.charsheet button[type="roll"]:hover {
+    background-color: #c0392b;
+}
+
+.charsheet .sheet-add-button {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.charsheet .sheet-add-button button {
+    background-color: #27ae60;
+}
+
+.charsheet .sheet-add-button button:hover {
+    background-color: #229954;
+}
+
+/* Attributes Grid */
+.charsheet .sheet-attributes-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.charsheet .sheet-attribute {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+    background-color: #ecf0f1;
+    border-radius: 4px;
+    border: 2px solid #bdc3c7;
+}
+
+.charsheet .sheet-attribute label {
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.charsheet .sheet-attribute input {
+    width: 60px;
+    text-align: center;
+    margin-bottom: 8px;
+}
+
+.charsheet .sheet-attribute button {
+    width: 100%;
+}
+
+/* Repeating Sections */
+.charsheet fieldset.repcontainer {
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+/* Skills */
+.charsheet .sheet-skill-row {
+    display: grid;
+    grid-template-columns: 2fr 1fr auto auto auto;
+    gap: 10px;
+    align-items: center;
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    margin-bottom: 8px;
+}
+
+/* Abilities */
+.charsheet .sheet-ability-row {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 15px;
+    margin-bottom: 10px;
+}
+
+.charsheet .sheet-ability-header {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.charsheet .sheet-ability-details {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 10px;
+}
+
+.charsheet .sheet-ability-details input {
+    width: 60px;
+}
+
+.charsheet .sheet-ability-description {
+    margin-bottom: 10px;
+}
+
+.charsheet .sheet-ability-roll {
+    display: grid;
+    grid-template-columns: 1fr 2fr auto;
+    gap: 10px;
+    align-items: center;
+}
+
+/* Feats */
+.charsheet .sheet-feat-row {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 10px;
+    margin-bottom: 8px;
+}
+
+.charsheet .sheet-feat-row input {
+    margin-bottom: 8px;
+}
+
+/* Weapons */
+.charsheet .sheet-weapon-row {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr auto;
+    gap: 10px;
+    align-items: center;
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    margin-bottom: 8px;
+}
+
+/* Armor */
+.charsheet .sheet-armor-row {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr auto auto;
+    gap: 10px;
+    align-items: center;
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    margin-bottom: 8px;
+}
+
+/* Inventory */
+.charsheet .sheet-inventory-row {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 10px;
+    margin-bottom: 8px;
+}
+
+.charsheet .sheet-inventory-row input[type="text"] {
+    margin-bottom: 5px;
+}
+
+.charsheet .sheet-inventory-row input[type="number"] {
+    width: 60px;
+    margin-right: 10px;
+    margin-bottom: 5px;
+}
+
+/* Currency Grid */
+.charsheet .sheet-currency-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.charsheet .sheet-currency {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.charsheet .sheet-currency input {
+    flex: 1;
+}
+
+/* Notes */
+.charsheet .sheet-note-row {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 10px;
+    margin-bottom: 8px;
+}
+
+.charsheet .sheet-note-row input {
+    margin-bottom: 8px;
+}
+
+/* Health & Resources */
+.charsheet .sheet-3-columns span {
+    align-self: center;
+    margin: 0 5px;
+    font-weight: bold;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .charsheet .sheet-2-columns,
+    .charsheet .sheet-3-columns,
+    .charsheet .sheet-4-columns {
+        grid-template-columns: 1fr;
+    }
+    
+    .charsheet .sheet-attributes-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .charsheet .sheet-skill-row,
+    .charsheet .sheet-weapon-row,
+    .charsheet .sheet-armor-row {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .charsheet .sheet-attributes-grid {
+        grid-template-columns: 1fr;
+    }
+}

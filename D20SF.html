@@ -1,0 +1,314 @@
+<!-- D20SF Character Sheet for Roll20 -->
+<div class="sheet-character-sheet">
+    <!-- Tab Navigation -->
+    <div class="sheet-tab-navigation">
+        <input type="radio" name="attr_sheet_tab" class="sheet-tab sheet-tab1" value="character" checked="checked">
+        <span class="sheet-tab-label" title="Character">Character</span>
+        
+        <input type="radio" name="attr_sheet_tab" class="sheet-tab sheet-tab2" value="abilities">
+        <span class="sheet-tab-label" title="Abilities">Abilities</span>
+        
+        <input type="radio" name="attr_sheet_tab" class="sheet-tab sheet-tab3" value="inventory">
+        <span class="sheet-tab-label" title="Inventory">Inventory</span>
+        
+        <input type="radio" name="attr_sheet_tab" class="sheet-tab sheet-tab4" value="notes">
+        <span class="sheet-tab-label" title="Notes">Notes</span>
+    </div>
+
+    <!-- Character Tab -->
+    <div class="sheet-tab-content sheet-tab-character">
+        <div class="sheet-section">
+            <h2>Character Information</h2>
+            
+            <div class="sheet-2-columns">
+                <div class="sheet-column">
+                    <label>Character Name:</label>
+                    <input type="text" name="attr_character_name" />
+                </div>
+                
+                <div class="sheet-column">
+                    <label>Player Name:</label>
+                    <input type="text" name="attr_player_name" />
+                </div>
+            </div>
+            
+            <div class="sheet-3-columns">
+                <div class="sheet-column">
+                    <label>Level:</label>
+                    <input type="number" name="attr_level" value="1" />
+                </div>
+                
+                <div class="sheet-column">
+                    <label>Experience:</label>
+                    <input type="number" name="attr_experience" value="0" />
+                </div>
+                
+                <div class="sheet-column">
+                    <label>Class:</label>
+                    <input type="text" name="attr_class" />
+                </div>
+            </div>
+        </div>
+
+        <!-- Core Attributes -->
+        <div class="sheet-section">
+            <h2>Core Attributes</h2>
+            
+            <div class="sheet-attributes-grid">
+                <div class="sheet-attribute">
+                    <label>Strength:</label>
+                    <input type="number" name="attr_strength" value="10" />
+                    <button type="roll" name="roll_strength" value="&{template:default} {{name=Strength Check}} {{roll=[[1d20+@{strength_mod}]]}}">
+                        Roll
+                    </button>
+                </div>
+                
+                <div class="sheet-attribute">
+                    <label>Dexterity:</label>
+                    <input type="number" name="attr_dexterity" value="10" />
+                    <button type="roll" name="roll_dexterity" value="&{template:default} {{name=Dexterity Check}} {{roll=[[1d20+@{dexterity_mod}]]}}">
+                        Roll
+                    </button>
+                </div>
+                
+                <div class="sheet-attribute">
+                    <label>Constitution:</label>
+                    <input type="number" name="attr_constitution" value="10" />
+                    <button type="roll" name="roll_constitution" value="&{template:default} {{name=Constitution Check}} {{roll=[[1d20+@{constitution_mod}]]}}">
+                        Roll
+                    </button>
+                </div>
+                
+                <div class="sheet-attribute">
+                    <label>Intelligence:</label>
+                    <input type="number" name="attr_intelligence" value="10" />
+                    <button type="roll" name="roll_intelligence" value="&{template:default} {{name=Intelligence Check}} {{roll=[[1d20+@{intelligence_mod}]]}}">
+                        Roll
+                    </button>
+                </div>
+                
+                <div class="sheet-attribute">
+                    <label>Wisdom:</label>
+                    <input type="number" name="attr_wisdom" value="10" />
+                    <button type="roll" name="roll_wisdom" value="&{template:default} {{name=Wisdom Check}} {{roll=[[1d20+@{wisdom_mod}]]}}">
+                        Roll
+                    </button>
+                </div>
+                
+                <div class="sheet-attribute">
+                    <label>Charisma:</label>
+                    <input type="number" name="attr_charisma" value="10" />
+                    <button type="roll" name="roll_charisma" value="&{template:default} {{name=Charisma Check}} {{roll=[[1d20+@{charisma_mod}]]}}">
+                        Roll
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Health & Resources -->
+        <div class="sheet-section">
+            <h2>Health & Resources</h2>
+            
+            <div class="sheet-3-columns">
+                <div class="sheet-column">
+                    <label>Hit Points:</label>
+                    <input type="number" name="attr_hp" value="0" />
+                    <span>/</span>
+                    <input type="number" name="attr_hp_max" value="0" />
+                </div>
+                
+                <div class="sheet-column">
+                    <label>Armor Class:</label>
+                    <input type="number" name="attr_ac" value="10" />
+                </div>
+                
+                <div class="sheet-column">
+                    <label>Initiative:</label>
+                    <input type="number" name="attr_initiative" value="0" />
+                    <button type="roll" name="roll_initiative" value="&{template:default} {{name=Initiative}} {{roll=[[1d20+@{initiative}]]}}">
+                        Roll
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Repeating Skills Section -->
+        <div class="sheet-section">
+            <h2>Skills</h2>
+            
+            <fieldset class="repeating_skills">
+                <div class="sheet-skill-row">
+                    <input type="text" name="attr_skill_name" placeholder="Skill Name" />
+                    <input type="number" name="attr_skill_bonus" value="0" placeholder="Bonus" />
+                    <button type="roll" name="roll_skill" value="&{template:default} {{name=@{skill_name}}} {{roll=[[1d20+@{skill_bonus}]]}}">
+                        Roll
+                    </button>
+                    <input type="checkbox" name="attr_skill_proficient" value="1" />
+                    <label>Proficient</label>
+                </div>
+            </fieldset>
+            
+            <div class="sheet-add-button">
+                <button type="action" name="act_add_skill">Add Skill</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Abilities Tab -->
+    <div class="sheet-tab-content sheet-tab-abilities">
+        <div class="sheet-section">
+            <h2>Special Abilities</h2>
+            
+            <fieldset class="repeating_abilities">
+                <div class="sheet-ability-row">
+                    <div class="sheet-ability-header">
+                        <input type="text" name="attr_ability_name" placeholder="Ability Name" />
+                        <input type="text" name="attr_ability_type" placeholder="Type (Active/Passive)" />
+                    </div>
+                    <div class="sheet-ability-details">
+                        <label>Uses:</label>
+                        <input type="number" name="attr_ability_uses" value="0" />
+                        <span>/</span>
+                        <input type="number" name="attr_ability_uses_max" value="0" />
+                    </div>
+                    <div class="sheet-ability-description">
+                        <label>Description:</label>
+                        <textarea name="attr_ability_description" placeholder="Describe the ability..."></textarea>
+                    </div>
+                    <div class="sheet-ability-roll">
+                        <label>Roll Formula:</label>
+                        <input type="text" name="attr_ability_roll" placeholder="e.g., 1d20+5" />
+                        <button type="roll" name="roll_ability" value="&{template:default} {{name=@{ability_name}}} {{roll=[[@{ability_roll}]]}} {{description=@{ability_description}}}">
+                            Roll
+                        </button>
+                    </div>
+                </div>
+            </fieldset>
+            
+            <div class="sheet-add-button">
+                <button type="action" name="act_add_ability">Add Ability</button>
+            </div>
+        </div>
+
+        <!-- Repeating Feats Section -->
+        <div class="sheet-section">
+            <h2>Feats & Traits</h2>
+            
+            <fieldset class="repeating_feats">
+                <div class="sheet-feat-row">
+                    <input type="text" name="attr_feat_name" placeholder="Feat Name" />
+                    <textarea name="attr_feat_description" placeholder="Description..."></textarea>
+                </div>
+            </fieldset>
+            
+            <div class="sheet-add-button">
+                <button type="action" name="act_add_feat">Add Feat/Trait</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Inventory Tab -->
+    <div class="sheet-tab-content sheet-tab-inventory">
+        <div class="sheet-section">
+            <h2>Weapons</h2>
+            
+            <fieldset class="repeating_weapons">
+                <div class="sheet-weapon-row">
+                    <input type="text" name="attr_weapon_name" placeholder="Weapon Name" />
+                    <input type="text" name="attr_weapon_damage" placeholder="Damage (e.g., 1d8)" />
+                    <input type="text" name="attr_weapon_type" placeholder="Type" />
+                    <input type="number" name="attr_weapon_bonus" value="0" placeholder="Bonus" />
+                    <button type="roll" name="roll_weapon_attack" value="&{template:default} {{name=@{weapon_name} Attack}} {{Attack Roll=[[1d20+@{weapon_bonus}]]}} {{Damage=[[(@{weapon_damage})+@{weapon_bonus}]]}}">
+                        Attack
+                    </button>
+                </div>
+            </fieldset>
+            
+            <div class="sheet-add-button">
+                <button type="action" name="act_add_weapon">Add Weapon</button>
+            </div>
+        </div>
+
+        <div class="sheet-section">
+            <h2>Armor</h2>
+            
+            <fieldset class="repeating_armor">
+                <div class="sheet-armor-row">
+                    <input type="text" name="attr_armor_name" placeholder="Armor Name" />
+                    <input type="number" name="attr_armor_ac" value="0" placeholder="AC Bonus" />
+                    <input type="text" name="attr_armor_type" placeholder="Type" />
+                    <input type="checkbox" name="attr_armor_equipped" value="1" />
+                    <label>Equipped</label>
+                </div>
+            </fieldset>
+            
+            <div class="sheet-add-button">
+                <button type="action" name="act_add_armor">Add Armor</button>
+            </div>
+        </div>
+
+        <div class="sheet-section">
+            <h2>General Inventory</h2>
+            
+            <fieldset class="repeating_inventory">
+                <div class="sheet-inventory-row">
+                    <input type="text" name="attr_item_name" placeholder="Item Name" />
+                    <input type="number" name="attr_item_quantity" value="1" placeholder="Qty" />
+                    <input type="text" name="attr_item_weight" placeholder="Weight" />
+                    <textarea name="attr_item_description" placeholder="Description..."></textarea>
+                </div>
+            </fieldset>
+            
+            <div class="sheet-add-button">
+                <button type="action" name="act_add_item">Add Item</button>
+            </div>
+        </div>
+
+        <div class="sheet-section">
+            <h2>Currency</h2>
+            
+            <div class="sheet-currency-grid">
+                <div class="sheet-currency">
+                    <label>Gold:</label>
+                    <input type="number" name="attr_gold" value="0" />
+                </div>
+                <div class="sheet-currency">
+                    <label>Silver:</label>
+                    <input type="number" name="attr_silver" value="0" />
+                </div>
+                <div class="sheet-currency">
+                    <label>Copper:</label>
+                    <input type="number" name="attr_copper" value="0" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notes Tab -->
+    <div class="sheet-tab-content sheet-tab-notes">
+        <div class="sheet-section">
+            <h2>Character Background</h2>
+            <textarea name="attr_background" placeholder="Write your character's background story..."></textarea>
+        </div>
+
+        <div class="sheet-section">
+            <h2>Appearance</h2>
+            <textarea name="attr_appearance" placeholder="Describe your character's appearance..."></textarea>
+        </div>
+
+        <div class="sheet-section">
+            <h2>Additional Notes</h2>
+            
+            <fieldset class="repeating_notes">
+                <div class="sheet-note-row">
+                    <input type="text" name="attr_note_title" placeholder="Note Title" />
+                    <textarea name="attr_note_content" placeholder="Note content..."></textarea>
+                </div>
+            </fieldset>
+            
+            <div class="sheet-add-button">
+                <button type="action" name="act_add_note">Add Note</button>
+            </div>
+        </div>
+    </div>
+</div>
