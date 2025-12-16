@@ -58,6 +58,8 @@
                 <div class="sheet-attribute">
                     <label>Strength:</label>
                     <input type="number" name="attr_strength" value="10" />
+                    <label class="sheet-mod-label">Modifier:</label>
+                    <input type="number" name="attr_strength_mod" value="0" class="sheet-mod-input" />
                     <button type="roll" name="roll_strength" value="&{template:default} {{name=Strength Check}} {{roll=[[1d20+@{strength_mod}]]}}">
                         Roll
                     </button>
@@ -66,6 +68,8 @@
                 <div class="sheet-attribute">
                     <label>Dexterity:</label>
                     <input type="number" name="attr_dexterity" value="10" />
+                    <label class="sheet-mod-label">Modifier:</label>
+                    <input type="number" name="attr_dexterity_mod" value="0" class="sheet-mod-input" />
                     <button type="roll" name="roll_dexterity" value="&{template:default} {{name=Dexterity Check}} {{roll=[[1d20+@{dexterity_mod}]]}}">
                         Roll
                     </button>
@@ -74,6 +78,8 @@
                 <div class="sheet-attribute">
                     <label>Constitution:</label>
                     <input type="number" name="attr_constitution" value="10" />
+                    <label class="sheet-mod-label">Modifier:</label>
+                    <input type="number" name="attr_constitution_mod" value="0" class="sheet-mod-input" />
                     <button type="roll" name="roll_constitution" value="&{template:default} {{name=Constitution Check}} {{roll=[[1d20+@{constitution_mod}]]}}">
                         Roll
                     </button>
@@ -82,6 +88,8 @@
                 <div class="sheet-attribute">
                     <label>Intelligence:</label>
                     <input type="number" name="attr_intelligence" value="10" />
+                    <label class="sheet-mod-label">Modifier:</label>
+                    <input type="number" name="attr_intelligence_mod" value="0" class="sheet-mod-input" />
                     <button type="roll" name="roll_intelligence" value="&{template:default} {{name=Intelligence Check}} {{roll=[[1d20+@{intelligence_mod}]]}}">
                         Roll
                     </button>
@@ -90,6 +98,8 @@
                 <div class="sheet-attribute">
                     <label>Wisdom:</label>
                     <input type="number" name="attr_wisdom" value="10" />
+                    <label class="sheet-mod-label">Modifier:</label>
+                    <input type="number" name="attr_wisdom_mod" value="0" class="sheet-mod-input" />
                     <button type="roll" name="roll_wisdom" value="&{template:default} {{name=Wisdom Check}} {{roll=[[1d20+@{wisdom_mod}]]}}">
                         Roll
                     </button>
@@ -98,6 +108,8 @@
                 <div class="sheet-attribute">
                     <label>Charisma:</label>
                     <input type="number" name="attr_charisma" value="10" />
+                    <label class="sheet-mod-label">Modifier:</label>
+                    <input type="number" name="attr_charisma_mod" value="0" class="sheet-mod-input" />
                     <button type="roll" name="roll_charisma" value="&{template:default} {{name=Charisma Check}} {{roll=[[1d20+@{charisma_mod}]]}}">
                         Roll
                     </button>
@@ -218,7 +230,7 @@
                     <input type="text" name="attr_weapon_damage" placeholder="Damage (e.g., 1d8)" />
                     <input type="text" name="attr_weapon_type" placeholder="Type" />
                     <input type="number" name="attr_weapon_bonus" value="0" placeholder="Bonus" />
-                    <button type="roll" name="roll_weapon_attack" value="&{template:default} {{name=@{weapon_name} Attack}} {{Attack Roll=[[1d20+@{weapon_bonus}]]}} {{Damage=[[(@{weapon_damage})+@{weapon_bonus}]]}}">
+                    <button type="roll" name="roll_weapon_attack" value="&{template:default} {{name=@{weapon_name} Attack}} {{Attack Roll=[[1d20+@{weapon_bonus}]]}} {{Damage=[[(@{weapon_damage})]]}} {{Damage Bonus=[[+@{weapon_bonus}]]}}">
                         Attack
                     </button>
                 </div>
