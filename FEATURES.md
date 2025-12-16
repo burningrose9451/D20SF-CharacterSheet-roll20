@@ -6,7 +6,16 @@
 The character sheet uses Roll20's radio button-based tab system with CSS styling:
 - Four main tabs: Character, Abilities, Inventory, Notes
 - Tab state is preserved using `attr_sheet_tab` attribute
-- Pure CSS tab switching (no JavaScript required)
+- Pure CSS tab switching (no JavaScript required for tabs)
+
+### Sheet Workers (JavaScript)
+The sheet includes automatic calculations via Roll20 sheetworkers:
+- **Attribute Modifiers**: Auto-calculated from ability scores using formula `(score - 10) / 2` rounded down
+- **Initiative**: Automatically set to Dexterity modifier
+- **Proficiency Bonus**: Auto-calculated from level (+2 at level 1, +1 every 4 levels)
+- **Armor Class**: Dynamically calculates from base AC + equipped armor bonuses
+- **Add Buttons**: All "Add" buttons in repeating sections are functional via sheetworkers
+- **Sheet Initialization**: All calculated values refresh when the sheet opens
 
 ### Repeating Sections
 The sheet includes 7 repeating sections for customizable content:

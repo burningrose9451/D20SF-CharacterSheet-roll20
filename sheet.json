@@ -4,5 +4,6 @@
   "authors": "burningrose9451",
   "roll20userid": "",
   "preview": "",
-  "instructions": "A character sheet for the D20SF Tabletop RPG system. Features multiple tabs for different character aspects and repeating sections for customizable fields."
+  "instructions": "A character sheet for the D20SF Tabletop RPG system. Features multiple tabs for different character aspects and repeating sections for customizable fields.",
+  "legacy": false
 }

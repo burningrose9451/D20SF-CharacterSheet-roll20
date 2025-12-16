@@ -27,11 +27,21 @@ The sheet supports Roll20's repeating sections for highly customizable fields:
 - Attribute references using `@{attribute_name}` syntax
 - Inline rolls with `[[dice formula]]` notation
 
+### Sheet Workers (Automatic Calculations)
+The sheet includes JavaScript sheetworkers for automated calculations:
+- **Attribute Modifiers**: Automatically calculate modifiers from ability scores (Str, Dex, Con, Int, Wis, Cha)
+- **Initiative**: Auto-updates based on Dexterity modifier
+- **Proficiency Bonus**: Automatically calculated from character level
+- **Armor Class**: Dynamically calculates total AC from equipped armor
+- **Add Buttons**: Functional "Add" buttons for all repeating sections
+- **Sheet Initialization**: All calculated values update when the sheet opens
+
 ## File Structure
 
 - `sheet.json` - Roll20 character sheet metadata
-- `D20SF.html` - Character sheet HTML structure
+- `D20SF.html` - Character sheet HTML structure with embedded sheetworkers (JavaScript)
 - `D20SF.css` - Character sheet styling and tab functionality
+- `D20SF.js` - Standalone JavaScript file (sheetworkers are embedded in HTML for Roll20)
 
 ## Usage
 
